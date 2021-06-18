@@ -54,12 +54,13 @@ def show():
 
     st.subheader('Setting state via API after Widget declaration')
     with st.echo():
-        # Trying to define a callback for an individual widget
-        # inside a form throws an exception
-        def form_callback():
-            st.write('Inside form callback')
+        slider = st.slider(label='My Slider', min_value=1, max_value=10, value=5, key='my_slider')
+        if st.checkbox(label='Click to see exception', key='slider_checkbox'):
+            st.session_state.my_slider = 7
 
-        if st.checkbox(label='Check to see exception', key='form_checkbox'):
-            with st.form(key='my_form'):
-                checkbox = st.checkbox('Toggle me', on_change=form_callback)
-                submit = st.form_submit_button(label='Submit')
+    st.write('---')
+
+    st.subheader('State is set via the API and at widget declaration time there is a default value')
+    with st.echo():
+        st.session_state.my_second_slider = 7
+        slider = st.slider(label='My Slider', min_value=1, max_value=10, value=5, key='my_second_slider')
