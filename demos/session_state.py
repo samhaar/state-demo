@@ -5,12 +5,12 @@ from . import crud
 from . import forms
 from . import two_sliders
 from . import file_uploader
+from . import state_exceptions
 
 
 
 def show():
-    # https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/bowling_1f3b3.png
-    # https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/joystick_1f579-fe0f.png
+
     st.image(
         "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/joystick_1f579-fe0f.png",
         width=100,
@@ -81,6 +81,12 @@ def show_file_uploader():
 
     st.write("---")
     file_uploader.show()
+    st.write("---")
+
+
+def show_exceptions():
+    st.write("---")
+    state_exceptions.show()
     st.write("---")
 
 

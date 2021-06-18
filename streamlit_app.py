@@ -24,6 +24,7 @@ demo_pages = {
     'Forms': session_state.show_forms,
     '2 sliders': session_state.show_sliders,
     'File Uploader': session_state.show_file_uploader,
+    'Exceptions': session_state.show_exceptions,
 }
 
 
