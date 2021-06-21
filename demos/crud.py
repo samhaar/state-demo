@@ -48,6 +48,8 @@ def show():
     st.subheader('Empty Session state')
     with st.echo():
         for key in st.session_state.keys():
-            del st.session_state[key]
-
-    st.write(st.session_state)
+            if key != 'pages':
+                del st.session_state[key]
+        st.write(st.session_state)
+        for key in st.session_state.keys():
+            st.write('Key:', key)
