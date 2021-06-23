@@ -1,18 +1,18 @@
 import sys
 from pathlib import Path
 
-file = Path(__file__).resolve()
-parent, root = file.parent, file.parents[1]
-sys.path.append(str(root))
+# file = Path(__file__).resolve()
+# parent, root = file.parent, file.parents[1]
+# sys.path.append(str(root))
 
-try:
-    sys.path.remove(str(parent))
-except ValueError:  # Already removed
-    pass
+# try:
+#     sys.path.remove(str(parent))
+# except ValueError:  # Already removed
+#     pass
 
 import streamlit as st
 
-VERSION = ".".join(st.__version__.split(".")[:2])
+#VERSION = ".".join(st.__version__.split(".")[:2])
 # st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
 
 from demos import session_state
