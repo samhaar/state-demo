@@ -25,18 +25,18 @@ def show():
 
     st.subheader('Simple Callback')
     with st.echo():
-        st.button("Plus one!", on_change=increment)
+        st.button("Plus one!", on_click=increment)
 
     value = st.number_input('Enter a value', value=0, step=1)
 
     st.subheader('Callback with Args')
     with st.echo():
-        st.button('Plus Value', on_change=increment_by_value, args=(value, ))
+        st.button('Plus Value', on_click=increment_by_value, args=(value, ))
 
     st.subheader('Callback with kwargs')
     with st.echo():
-        st.button('Plus Default value', on_change=increment_by_value_kwargs)
+        st.button('Plus Default value', on_click=increment_by_value_kwargs)
 
     st.subheader('Callback with kwargs')
     with st.echo():
-        st.button('Plus Input value', on_change=increment_by_value_kwargs, kwargs=dict(value=value))
+        st.button('Plus Input value', on_click=increment_by_value_kwargs, kwargs=dict(value=value))

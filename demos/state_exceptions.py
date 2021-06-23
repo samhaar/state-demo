@@ -28,7 +28,18 @@ def show():
             # should throw an exception
             st.session_state.my_file_uploader = 'x'
 
-        st.button(label='Submit', key='my_button', on_change=callback)
+        st.button(label='Submit', key='my_button', on_click=callback)
+
+    st.write('---')
+
+
+    st.subheader('Setting on_change where on_click was Expected')
+    with st.echo():
+        def on_change_callback():
+            st.write('Inside callback')
+
+        if st.checkbox(label='Check to see exception', key='on_change_exception'):
+            st.button(label='Submit', key='my_button', on_change=on_change_callback)
 
     st.write('---')
 

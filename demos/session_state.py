@@ -6,6 +6,7 @@ from . import forms
 from . import two_sliders
 from . import file_uploader
 from . import state_exceptions
+from . import widgets
 
 
 
@@ -87,6 +88,12 @@ def show_file_uploader():
 def show_exceptions():
     st.write("---")
     state_exceptions.show()
+    st.write("---")
+
+
+def show_widgets():
+    st.write("---")
+    widgets.show()
     st.write("---")
 
 
